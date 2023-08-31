@@ -24,8 +24,10 @@ public class Login extends HttpServlet {
         String password = request.getParameter("password");
         Account account = iAccountService.login(userName,password);
         if (account != null){
-            request.getRequestDispatcher("index.jsp").forward(request,response);
+            // Không cần đẩy dữ liệu về trang index nên dùng respone
+            response.sendRedirect("index.jsp");
         }else {
+            request.setAttribute("message","Sai tên tài khoản hoặc mật khẩu!");
             request.getRequestDispatcher("login.jsp").forward(request,response);
         }
     }

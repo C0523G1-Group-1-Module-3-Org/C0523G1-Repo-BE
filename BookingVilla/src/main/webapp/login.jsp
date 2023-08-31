@@ -17,7 +17,10 @@
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Đăng Nhập</h2>
-                            <form action="/login?" method="post">
+                            <form action="/login" method="post">
+                                <p class="text-danger" role="alert">
+                                   ${message}
+                                </p>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="userName">Số điện thoại</label>
                                     <input type="text" id="userName" name="userName" class="form-control form-control-lg" />
