@@ -11,7 +11,7 @@
     <title>Sign Up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="css_index/login.css">
+    <link rel="stylesheet" href="css_index/login_sign_up.css">
     <link rel="stylesheet" href="css_index/main_page_css.css">
 </head>
 <body>
@@ -23,20 +23,20 @@
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Đăng ký</h2>
-                            <form>
+                            <form action="/signup", method="post">
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example1cg">Họ và tên</label>
-                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                                    <label class="form-label" for="fullName">Họ và tên</label>
+                                    <input type="text" id="fullName" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example3cg">CMND/CCCD</label>
-                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                                    <label class="form-label" for="identityNumber">CMND/CCCD</label>
+                                    <input type="text" id="identityNumber" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example4cg">Ngày sinh</label>
-                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                                    <label class="form-label" for="dateOfBirth">Ngày sinh</label>
+                                    <input type="date" id="dateOfBirth" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -49,34 +49,35 @@
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example4cg1">Email</label>
-                                    <input type="email" id="form3Example4cg1" class="form-control form-control-lg" />
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" id="email" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example4cg12">Địa chỉ</label>
-                                    <input type="text" id="form3Example4cg12" class="form-control form-control-lg"/>
+                                    <label class="form-label" for="address">Địa chỉ</label>
+                                    <input type="text" id="address" class="form-control form-control-lg"/>
                                 </div>
                                 <hr>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example4cg13">Số điện thoại</label>
-                                    <input type="text" id="form3Example4cg13" class="form-control form-control-lg" />
+                                    <label class="form-label" for="phoneNumber">Số điện thoại</label>
+                                    <input type="text" id="phoneNumber" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example4cg14">Mật khẩu</label>
-                                    <input type="text" id="form3Example4cg14" class="form-control form-control-lg" />
+                                    <label class="form-label" for="password">Mật khẩu</label>
+                                    <input type="password" id="password" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example4cg15">Nhập lại mật khẩu</label>
-                                    <input type="text" id="form3Example4cg15" class="form-control form-control-lg" />
+                                    <label class="form-label" for="passwordConfirm">Nhập lại mật khẩu</label>
+                                    <input type="password" id="passwordConfirm" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng ký</button>
+                                    <button type="submit" class="backgroundcolor-2 hover">Đăng ký</button>
                                 </div>
-                                <p class="text-center text-muted mt-5 mb-0">Đã có tài khoản? <a href="login.jsp" class="fw-bold text-body"><u>Nhấn vào để đăng nhập</u></a></p>
+                                <p class="text-center text-muted mt-5 mb-0">Đã có tài khoản?
+                                    <a href="login.jsp" class="fw-bold text-body"><u>Nhấn vào để đăng nhập</u></a></p>
                             </form>
                         </div>
                     </div>

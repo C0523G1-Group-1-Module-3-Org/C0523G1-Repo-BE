@@ -5,7 +5,7 @@
     <title>Log In</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="css_index/login.css">
+    <link rel="stylesheet" href="css_index/login_sign_up.css">
     <link rel="stylesheet" href="css_index/main_page_css.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
                                     <input type="password" id="password" name="password" class="form-control form-control-lg" />
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Đăng nhập</button>
+                                    <button type="submit" class="backgroundcolor-2 hover">Đăng nhập</button>
                                 </div>
                                 <p class="text-center text-muted mt-5 mb-0">Chưa có tài khoản? <a href="signup.jsp" class="fw-bold text-body"><u>Đăng ký</u></a></p>
                             </form>
