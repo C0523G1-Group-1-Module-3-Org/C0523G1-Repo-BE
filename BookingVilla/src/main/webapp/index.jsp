@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,8 @@
 <div id="header" class="boxshadow-outset">
     <img src="https://drive.google.com/uc?id=1cH2mCtzpEW1JtCt0qkxoD6PtEGbuT35c" width="100%"/>
     <div></div>
-    <button class="backgroundcolor-2 hover">Đăng nhập</button>
-    <button class="backgroundcolor-2 hover">Đăng ký</button>
+    <button class="backgroundcolor-2 hover" onclick="redirectToLogin()">Đăng nhập</button>
+    <button class="backgroundcolor-2 hover" onclick="redirectToSignUp()">Đăng ký</button>
 </div>
 <div id="context" class="boxshadow-outset">
     <div id="clock">00:00:00</div>
@@ -25,7 +26,6 @@
     <div id="slide" class="backgroundcolor-2"></div>
     <div id="picture-main">
         <img src="https://drive.google.com/uc?id=1Ye2HDuK6y2fMEOPw0fdaed150tBaQFpB" width="100%"/>
-
         <div id="calendar">
             <div class="month backgroundcolor-3">
                 <p>Tháng</p>
@@ -90,11 +90,11 @@
     </div>
     <div id="close-detail-board" class="backgroundcolor-3 hover boxshadow-outset" onclick="close_detail_board()"></div>
 </div>
-
 </body>
 <script src="css_index/clock.js"></script>
 <script src="css_index/calendar.js"></script>
 <script src="css_index/datalist.js"></script>
 <script src="css_index/backtop.js"></script>
 <script src="css_index/setup.js"></script>
+<script src="css_index/redirect_to_new_page.js"></script>
 </html>
