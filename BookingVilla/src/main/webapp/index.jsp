@@ -96,5 +96,5 @@
 <script src="css_index/datalist.js"></script>
 <script src="css_index/backtop.js"></script>
 <script src="css_index/setup.js"></script>
-<script src="css_index/redirect_to_new_page.js"></script>
+<script src="javascript/redirect_to_new_page.js"></script>
 </html>

@@ -26,17 +26,17 @@
                             <form action="/signup", method="post">
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="fullName">Họ và tên</label>
-                                    <input type="text" id="fullName" class="form-control form-control-lg" />
+                                    <input type="text" id="fullName" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="identityNumber">CMND/CCCD</label>
-                                    <input type="text" id="identityNumber" class="form-control form-control-lg" />
+                                    <input type="text" id="identityNumber" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="dateOfBirth">Ngày sinh</label>
-                                    <input type="date" id="dateOfBirth" class="form-control form-control-lg" />
+                                    <input type="date" id="dateOfBirth" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
@@ -50,27 +50,27 @@
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="email">Email</label>
-                                    <input type="email" id="email" class="form-control form-control-lg" />
+                                    <input type="email" id="email" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="address">Địa chỉ</label>
-                                    <input type="text" id="address" class="form-control form-control-lg"/>
+                                    <input type="text" id="address" class="form-control form-control-lg" required/>
                                 </div>
-                                <hr>
+                                <hr style="margin: 15% 0%">
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="phoneNumber">Số điện thoại</label>
-                                    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg" />
+                                    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="password">Mật khẩu</label>
-                                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                                    <input type="password" id="password" name="password" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="passwordConfirm">Nhập lại mật khẩu</label>
-                                    <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-control form-control-lg" />
+                                    <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="d-flex justify-content-center">
