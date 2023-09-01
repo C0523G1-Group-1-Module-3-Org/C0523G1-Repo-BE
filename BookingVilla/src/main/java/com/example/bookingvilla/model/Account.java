@@ -6,10 +6,9 @@ public class Account {
     private String password;
     private boolean isDelete = false;
 
-    public Account(String userName, String password, boolean isDelete) {
+    public Account(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.isDelete = isDelete;
     }
 
     public Account(int accountCode, String userName, String password, boolean isDelete) {

@@ -16,7 +16,7 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5">
-                            <div class="form-outline mb-4"><img style="width: 100%; height: auto; margin-bottom:6%" src="css_index/logo/logo.png" alt=""></div>
+                            <div class="form-outline mb-4"><img style="width: 100%; height: auto; margin-bottom:6%; align-items: center" src="css_index/logo/logo.png" alt=""></div>
                             <form action="/login" method="post">
                                 <p class="text-danger" role="alert">
                                    ${message}

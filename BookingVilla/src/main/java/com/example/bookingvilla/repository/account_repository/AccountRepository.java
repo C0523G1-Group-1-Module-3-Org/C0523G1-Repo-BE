@@ -11,6 +11,8 @@ import java.sql.SQLException;
 public class AccountRepository implements IAccountRepository{
     private static final String SELECT_ACCOUNT = "SELECT * FROM booking.account_customers\n" +
             "WHERE user_name = ? AND password_account = ?";
+    private static final String INSERT_ACCOUNT = "INSERT INTO account_customers(user_name,password_account)\n" +
+            "VALUES (?,?)";
     @Override
     public Account login(String userName, String password) {
         Connection connection = DatabaseConnection.getConnection();
@@ -34,6 +36,15 @@ public class AccountRepository implements IAccountRepository{
 
     @Override
     public void save(Account account) {
-
+        Connection connection = DatabaseConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ACCOUNT);
+            preparedStatement.setString(1,account.getUserName());
+            preparedStatement.setString(2,account.getPassword());
+            preparedStatement.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

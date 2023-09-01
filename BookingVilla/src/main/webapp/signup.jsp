@@ -60,17 +60,17 @@
                                 <hr>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="phoneNumber">Số điện thoại</label>
-                                    <input type="text" id="phoneNumber" class="form-control form-control-lg" />
+                                    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="password">Mật khẩu</label>
-                                    <input type="password" id="password" class="form-control form-control-lg" />
+                                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="passwordConfirm">Nhập lại mật khẩu</label>
-                                    <input type="password" id="passwordConfirm" class="form-control form-control-lg" />
+                                    <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="d-flex justify-content-center">
