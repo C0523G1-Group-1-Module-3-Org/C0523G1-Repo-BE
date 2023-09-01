@@ -14,6 +14,11 @@ public class Customer {
 
     public Customer() {
     }
+
+    public Customer(String identityNumber) {
+        this.identityNumber = identityNumber;
+    }
+
     public Customer(String customerName, String identityNumber, String dateOfBirth, boolean isGender,
                     String phoneNumber, String address, String email, String accountCode, boolean isDelete) {
         this.customerName = customerName;

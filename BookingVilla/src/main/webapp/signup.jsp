@@ -30,9 +30,13 @@
                                     <span class="form-message"></span>
                                 </div>
 
+                                <p class="text-danger" role="alert">
+                                    ${message4}
+                                </p>
+
                                 <div class="form-outline mb-4 form-group">
                                     <label class="form-label" for="identityNumber">CMND/CCCD</label>
-                                    <input type="text" id="identityNumber" class="form-control form-control-lg" required/>
+                                    <input type="text" name="identityNumber" id="identityNumber" class="form-control form-control-lg" required/>
                                     <span class="form-message"></span>
                                 </div>
 

@@ -25,7 +25,8 @@ public class SignUpServlet extends HttpServlet {
         String userName = request.getParameter("phoneNumber");
         String password = request.getParameter("password");
         String passwordConfirm = request.getParameter("passwordConfirm");
-        if (ValidateAccount.validatePhoneNumberToSignUp(userName) && password.equals(passwordConfirm) && ValidateAccount.validatePassword(password)) {
+        String identityNumber = request.getParameter("identityNumber");
+        if (ValidateAccount.validatePhoneNumberToSignUp(userName) && password.equals(passwordConfirm) && ValidateAccount.validatePassword(password)&& ValidateAccount.validateIdentityNumber(identityNumber)) {
             iAccountService.save(new Account(userName, password));
             request.getRequestDispatcher("/login.jsp").forward(request,response);
         }else if (!ValidateAccount.validatePhoneNumberToSignUp(userName)) {
@@ -37,6 +38,10 @@ public class SignUpServlet extends HttpServlet {
         }else  if (!ValidateAccount.validatePassword(password)){
             request.setAttribute("message2", "Mật khẩu phải chứa ít nhất 8 kí tự, ít nhất 1 số và cả chữ thường và chữ hoa");
             request.getRequestDispatcher("/signup.jsp").forward(request,response);
+        }else if(!ValidateAccount.validateIdentityNumber(identityNumber)){
+            request.setAttribute("message4","Số CMND/CCCD sai định dạng hoặc đã tồn tại");
+            request.getRequestDispatcher("/signup.jsp").forward(request,response);
         }
+
     }
 }
