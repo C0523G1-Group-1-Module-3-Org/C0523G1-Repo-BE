@@ -10,4 +10,9 @@ public class AccountService implements IAccountService {
     public Account login(String userName, String password) {
         return iAccountRepository.login(userName,password);
     }
+
+    @Override
+    public void save(Account account) {
+
+    }
 }

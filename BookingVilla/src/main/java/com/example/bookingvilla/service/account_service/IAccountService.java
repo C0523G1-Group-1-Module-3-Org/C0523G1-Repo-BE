@@ -4,5 +4,6 @@ import com.example.bookingvilla.model.Account;
 
 public interface IAccountService {
     Account login (String userName, String password);
+    void save(Account account);
 
 }

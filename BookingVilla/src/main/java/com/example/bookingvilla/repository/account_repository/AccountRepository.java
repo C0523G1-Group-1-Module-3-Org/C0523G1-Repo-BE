@@ -31,4 +31,9 @@ public class AccountRepository implements IAccountRepository{
         }
         return null;
     }
+
+    @Override
+    public void save(Account account) {
+
+    }
 }

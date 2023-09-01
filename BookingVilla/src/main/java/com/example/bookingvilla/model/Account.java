@@ -4,7 +4,7 @@ public class Account {
     private int accountCode;
     private String userName;
     private String password;
-    private boolean isDelete;
+    private boolean isDelete = false;
 
     public Account(String userName, String password, boolean isDelete) {
         this.userName = userName;

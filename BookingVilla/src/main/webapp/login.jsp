@@ -3,9 +3,9 @@
 <html>
 <head>
     <title>Log In</title>
+    <link rel="stylesheet" href="css_index/login_sign_up.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="css_index/login_sign_up.css">
     <link rel="stylesheet" href="css_index/main_page_css.css">
 </head>
 <body>
@@ -16,22 +16,22 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Đăng Nhập</h2>
+                            <div class="form-outline mb-4"><img style="width: 100%; height: auto; margin-bottom:6%" src="css_index/logo/logo.png" alt=""></div>
                             <form action="/login" method="post">
                                 <p class="text-danger" role="alert">
                                    ${message}
                                 </p>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="userName">Số điện thoại</label>
-                                    <input type="text" id="userName" name="userName" class="form-control form-control-lg" />
+                                    <input type="text" id="userName" name="userName" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="password">Mật khẩu</label>
-                                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                                    <input type="password" id="password" name="password" class="form-control form-control-lg" required />
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="backgroundcolor-2 hover">Đăng nhập</button>
+                                    <button style="border-radius: 50px" type="submit" class="backgroundcolor-2 hover">Đăng nhập</button>
                                 </div>
                                 <p class="text-center text-muted mt-5 mb-0">Chưa có tài khoản? <a href="signup.jsp" class="fw-bold text-body"><u>Đăng ký</u></a></p>
                             </form>
