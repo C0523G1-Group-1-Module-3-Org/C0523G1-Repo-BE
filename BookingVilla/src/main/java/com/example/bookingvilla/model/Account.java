@@ -6,6 +6,10 @@ public class Account {
     private String password;
     private boolean isDelete = false;
 
+    public Account(String userName) {
+        this.userName = userName;
+    }
+
     public Account(String userName, String password) {
         this.userName = userName;
         this.password = password;

@@ -22,8 +22,7 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        Account account = iAccountService.login(userName,password);
-        if (account != null){
+        if (iAccountService.login(userName,password)){
             // Không cần đẩy dữ liệu về trang index nên dùng respone
             response.sendRedirect("index.jsp");
         }else {

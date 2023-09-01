@@ -23,7 +23,7 @@
                                 </p>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="userName">Số điện thoại</label>
-                                    <input type="text" id="userName" name="userName" class="form-control form-control-lg" required/>
+                                    <input type="tel" id="userName" name="userName" class="form-control form-control-lg" required/>
                                 </div>
 
                                 <div class="form-outline mb-4">
