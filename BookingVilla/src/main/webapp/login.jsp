@@ -31,7 +31,7 @@
                                     <input type="password" id="password" name="password" class="form-control form-control-lg" required />
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button style="border-radius: 50px" type="submit" class="backgroundcolor-2 hover">Đăng nhập</button>
+                                    <button style="border-radius: 50px; margin-top: 5%" type="submit" class="backgroundcolor-2 hover">Đăng nhập</button>
                                 </div>
                                 <p class="text-center text-muted mt-5 mb-0">Chưa có tài khoản? <a href="signup.jsp" class="fw-bold text-body"><u>Đăng ký</u></a></p>
                             </form>

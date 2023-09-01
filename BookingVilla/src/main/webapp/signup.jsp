@@ -23,7 +23,7 @@
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5">
                             <div class="form-outline mb-4"><img style="width: 100%; height: auto; margin-bottom: 6%" src="css_index/logo/logo.png" alt=""></div>
-                            <form action="/signup", method="post">
+                            <form action="/signup" method="post">
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="fullName">Họ và tên</label>
                                     <input type="text" id="fullName" class="form-control form-control-lg" required/>
@@ -74,7 +74,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button style="border-radius: 50px" type="submit" class="backgroundcolor-2 hover">Đăng ký</button>
+                                    <button style="border-radius: 50px; margin-top: 5%" type="submit" class="backgroundcolor-2 hover">Đăng ký</button>
                                 </div>
                                 <p class="text-center text-muted mt-5 mb-0">Đã có tài khoản?
                                     <a href="login.jsp" class="fw-bold text-body"><u>Nhấn vào để đăng nhập</u></a></p>
