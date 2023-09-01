@@ -1,6 +1,7 @@
 package com.example.bookingvilla.controller.account_servlet;
 
 import com.example.bookingvilla.common.validate.ValidateAccount;
+import com.example.bookingvilla.common.validate.ValidateCustomer;
 import com.example.bookingvilla.model.Account;
 import com.example.bookingvilla.service.account_service.AccountService;
 import com.example.bookingvilla.service.account_service.IAccountService;
@@ -26,7 +27,7 @@ public class SignUpServlet extends HttpServlet {
         String password = request.getParameter("password");
         String passwordConfirm = request.getParameter("passwordConfirm");
         String identityNumber = request.getParameter("identityNumber");
-        if (ValidateAccount.validatePhoneNumberToSignUp(userName) && password.equals(passwordConfirm) && ValidateAccount.validatePassword(password)&& ValidateAccount.validateIdentityNumber(identityNumber)) {
+        if (ValidateAccount.validatePhoneNumberToSignUp(userName) && password.equals(passwordConfirm) && ValidateAccount.validatePassword(password)&& ValidateCustomer.validateIdentityNumber(identityNumber)) {
             iAccountService.save(new Account(userName, password));
             request.getRequestDispatcher("/login.jsp").forward(request,response);
         }else if (!ValidateAccount.validatePhoneNumberToSignUp(userName)) {
@@ -38,7 +39,7 @@ public class SignUpServlet extends HttpServlet {
         }else  if (!ValidateAccount.validatePassword(password)){
             request.setAttribute("message2", "Mật khẩu phải chứa ít nhất 8 kí tự, ít nhất 1 số và cả chữ thường và chữ hoa");
             request.getRequestDispatcher("/signup.jsp").forward(request,response);
-        }else if(!ValidateAccount.validateIdentityNumber(identityNumber)){
+        }else if(!ValidateCustomer.validateIdentityNumber(identityNumber)){
             request.setAttribute("message4","Số CMND/CCCD sai định dạng hoặc đã tồn tại");
             request.getRequestDispatcher("/signup.jsp").forward(request,response);
         }
