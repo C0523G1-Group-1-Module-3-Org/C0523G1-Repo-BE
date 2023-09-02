@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
         String userName = request.getParameter("phoneNumber");
         String password = request.getParameter("password");
         if (iAccountService.login(userName,password)){
-            request.getRequestDispatcher("index.jsp").forward(request,response);
+            response.sendRedirect("/index.jsp");
         }else {
             request.setAttribute("message","Sai tên tài khoản hoặc mật khẩu!");
             request.getRequestDispatcher("login.jsp").forward(request,response);

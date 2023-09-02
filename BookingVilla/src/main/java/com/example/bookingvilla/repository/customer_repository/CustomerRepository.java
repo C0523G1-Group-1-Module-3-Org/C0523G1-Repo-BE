@@ -13,8 +13,8 @@ public class CustomerRepository implements ICustomerRepository{
             "WHERE identity_number = ?";
     private static final String SELECT_ACCOUNT_BY_EMAIL = "SELECT * FROM customers\n" +
             "WHERE email = ?";
-    private static final String INSERT_CUSTOMER = "INSERT INTO customers (name, identity_number, birthday, gender, phone_number, email, address, account_code) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_CUSTOMER = "INSERT INTO customers (name, identity_number, birthday, " +
+            "gender, phone_number, email, address, account_code) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     @Override
     public Customer getCustomerByIdentityNumber(String identityNumber) {
         Connection connection = DatabaseConnection.getConnection();

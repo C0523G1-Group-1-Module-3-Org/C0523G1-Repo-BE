@@ -7,8 +7,8 @@ public class Customer {
     private String dateOfBirth;
     private boolean isGender;
     private String phoneNumber;
-    private String address;
     private String email;
+    private String address;
     private int accountCode;
     private boolean isDelete = false;
 
@@ -16,40 +16,40 @@ public class Customer {
     }
 
     public Customer(String customerName, String identityNumber, String dateOfBirth, boolean isGender,
-                    String phoneNumber, String address, String email, int accountCode, boolean isDelete) {
+                    String phoneNumber, String email, String address, int accountCode, boolean isDelete) {
         this.customerName = customerName;
         this.identityNumber = identityNumber;
         this.dateOfBirth = dateOfBirth;
         this.isGender = isGender;
         this.phoneNumber = phoneNumber;
-        this.address = address;
         this.email = email;
+        this.address = address;
         this.accountCode = accountCode;
         this.isDelete = isDelete;
     }
 
     public Customer(int customerCode, String customerName, String identityNumber, String dateOfBirth, boolean isGender,
-                    String phoneNumber, String address, String email, int accountCode, boolean isDelete) {
+                    String phoneNumber, String email, String address, int accountCode, boolean isDelete) {
         this.customerCode = customerCode;
         this.customerName = customerName;
         this.identityNumber = identityNumber;
         this.dateOfBirth = dateOfBirth;
         this.isGender = isGender;
         this.phoneNumber = phoneNumber;
-        this.address = address;
         this.email = email;
+        this.address = address;
         this.accountCode = accountCode;
         this.isDelete = isDelete;
     }
 
-    public Customer(String customerName, String identityNumber, String dateOfBirth, boolean isGender, String phoneNumber, String address, String email,int accountCode) {
+    public Customer(String customerName, String identityNumber, String dateOfBirth, boolean isGender, String phoneNumber, String email, String address,int accountCode) {
         this.customerName = customerName;
         this.identityNumber = identityNumber;
         this.dateOfBirth = dateOfBirth;
         this.isGender = isGender;
         this.phoneNumber = phoneNumber;
-        this.address = address;
         this.email = email;
+        this.address = address;
         this.accountCode = accountCode;
     }
 
