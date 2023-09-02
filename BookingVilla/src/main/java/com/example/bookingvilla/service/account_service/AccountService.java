@@ -15,15 +15,6 @@ public class AccountService implements IAccountService {
         }
         return false;
     }
-
-    @Override
-    public boolean signUp(String password, String passwordConfirm) {
-        if (password.equals(passwordConfirm)){
-            return true;
-        }
-        return false;
-    }
-
     @Override
     public void save(Account account) {
         iAccountRepository.save(account);
