@@ -20,10 +20,10 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String userName = request.getParameter("userName");
+        String userName = request.getParameter("phoneNumber");
         String password = request.getParameter("password");
         if (iAccountService.login(userName,password)){
-            // Không cần đẩy dữ liệu về trang index nên dùng respone
+            // Không cần đẩy dữ liệu về trang chủ nên dùng respone
             response.sendRedirect("index.jsp");
         }else {
             request.setAttribute("message","Sai tên tài khoản hoặc mật khẩu!");
