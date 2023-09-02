@@ -26,7 +26,7 @@
                             <form action="/signup" method="post" id="form-1">
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="fullName">Họ và tên</label>
-                                    <input type="text" id="fullName" class="form-control form-control-lg" required/>
+                                    <input type="text" id="fullName" name="fullName" class="form-control form-control-lg" required/>
                                     <span class="form-message"></span>
                                 </div>
 
@@ -42,7 +42,7 @@
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="dateOfBirth">Ngày sinh</label>
-                                    <input type="date" id="dateOfBirth" class="form-control form-control-lg" required/>
+                                    <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control form-control-lg" required/>
                                     <span class="form-message"></span>
                                 </div>
 

@@ -9,14 +9,14 @@ public class Customer {
     private String phoneNumber;
     private String address;
     private String email;
-    private String accountCode;
-    private boolean isDelete;
+    private int accountCode;
+    private boolean isDelete = false;
 
     public Customer() {
     }
 
     public Customer(String customerName, String identityNumber, String dateOfBirth, boolean isGender,
-                    String phoneNumber, String address, String email, String accountCode, boolean isDelete) {
+                    String phoneNumber, String address, String email, int accountCode, boolean isDelete) {
         this.customerName = customerName;
         this.identityNumber = identityNumber;
         this.dateOfBirth = dateOfBirth;
@@ -29,7 +29,7 @@ public class Customer {
     }
 
     public Customer(int customerCode, String customerName, String identityNumber, String dateOfBirth, boolean isGender,
-                    String phoneNumber, String address, String email, String accountCode, boolean isDelete) {
+                    String phoneNumber, String address, String email, int accountCode, boolean isDelete) {
         this.customerCode = customerCode;
         this.customerName = customerName;
         this.identityNumber = identityNumber;
@@ -40,6 +40,17 @@ public class Customer {
         this.email = email;
         this.accountCode = accountCode;
         this.isDelete = isDelete;
+    }
+
+    public Customer(String customerName, String identityNumber, String dateOfBirth, boolean isGender, String phoneNumber, String address, String email,int accountCode) {
+        this.customerName = customerName;
+        this.identityNumber = identityNumber;
+        this.dateOfBirth = dateOfBirth;
+        this.isGender = isGender;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.email = email;
+        this.accountCode = accountCode;
     }
 
     public int getCustomerCode() {
@@ -106,11 +117,11 @@ public class Customer {
         this.email = email;
     }
 
-    public String getAccountCode() {
+    public int getAccountCode() {
         return accountCode;
     }
 
-    public void setAccountCode(String accountCode) {
+    public void setAccountCode(int accountCode) {
         this.accountCode = accountCode;
     }
 

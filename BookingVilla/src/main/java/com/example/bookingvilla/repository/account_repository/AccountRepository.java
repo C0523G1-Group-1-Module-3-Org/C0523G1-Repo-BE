@@ -10,12 +10,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AccountRepository implements IAccountRepository{
-    private static final String SELECT_ACCOUNT = "SELECT * FROM booking.account_customers\n" +
+    private static final String SELECT_ACCOUNT = "SELECT * FROM villa_booking.accounts\n" +
             "WHERE user_name = ? AND password_account = ?";
-    private static final String SELECT_ACCOUNT_BY_USER_NAME = "SELECT * FROM booking.account_customers\n" +
+    private static final String SELECT_ACCOUNT_BY_USER_NAME = "SELECT * FROM villa_booking.accounts\n" +
             "WHERE user_name = ?" ;
 
-    private static final String INSERT_ACCOUNT = "INSERT INTO account_customers(user_name,password_account)\n" +
+    private static final String INSERT_ACCOUNT = "INSERT INTO accounts(user_name,password_account)\n" +
             "VALUES (?,?)";
 
     @Override
