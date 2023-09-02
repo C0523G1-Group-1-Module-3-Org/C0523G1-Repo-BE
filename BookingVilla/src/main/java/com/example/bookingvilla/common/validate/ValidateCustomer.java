@@ -6,7 +6,7 @@ import com.example.bookingvilla.repository.customer_repository.ICustomerReposito
 
 public class ValidateCustomer {
     private static final String REGEX_IDENTITY_NUMBER = "^[0-9]{10,12}$";
-    private static  ICustomerRepository iCustomerRepository = new CustomerRepository();
+    private static ICustomerRepository iCustomerRepository = new CustomerRepository();
 
     public static boolean validateIdentityNumber(String identityNumber) {
         if (identityNumber.matches(REGEX_IDENTITY_NUMBER)) {
@@ -14,6 +14,14 @@ public class ValidateCustomer {
             if (customer == null) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    public static boolean validateEmail(String email) {
+        Customer customer = iCustomerRepository.getCustomerByEmail(email);
+        if (customer == null) {
+            return true;
         }
         return false;
     }

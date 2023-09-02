@@ -27,22 +27,25 @@ public class SignUpServlet extends HttpServlet {
         String password = request.getParameter("password");
         String passwordConfirm = request.getParameter("passwordConfirm");
         String identityNumber = request.getParameter("identityNumber");
-        if (ValidateAccount.validatePhoneNumberToSignUp(userName) && password.equals(passwordConfirm) && ValidateAccount.validatePassword(password)&& ValidateCustomer.validateIdentityNumber(identityNumber)) {
+        String email = request.getParameter("email");
+        if (ValidateAccount.validatePhoneNumberToSignUp(userName) && iAccountService.signUp(password,passwordConfirm) && ValidateAccount.validatePassword(password)&& ValidateCustomer.validateIdentityNumber(identityNumber) && ValidateCustomer.validateEmail(email)) {
             iAccountService.save(new Account(userName, password));
             request.getRequestDispatcher("/login.jsp").forward(request,response);
         }else if (!ValidateAccount.validatePhoneNumberToSignUp(userName)) {
-            request.setAttribute("message1","Số điện thoại sai định dạng hoặc đã tồn tại!");
+            request.setAttribute("phoneNumberError","Số điện thoại sai định dạng hoặc đã tồn tại!");
             request.getRequestDispatcher("/signup.jsp").forward(request,response);
-        }else if (!password.equals(passwordConfirm)){
-            request.setAttribute("message3", "Mật khẩu không trùng khớp");
+        }else if (!iAccountService.signUp(password,passwordConfirm)){
+            request.setAttribute("passwordConfirmError", "Mật khẩu không trùng khớp");
             request.getRequestDispatcher("/signup.jsp").forward(request,response);
         }else  if (!ValidateAccount.validatePassword(password)){
-            request.setAttribute("message2", "Mật khẩu phải chứa ít nhất 8 kí tự, ít nhất 1 số và cả chữ thường và chữ hoa");
+            request.setAttribute("passwordError", "Mật khẩu phải chứa ít nhất 8 kí tự, ít nhất 1 số và cả chữ thường và chữ hoa");
             request.getRequestDispatcher("/signup.jsp").forward(request,response);
         }else if(!ValidateCustomer.validateIdentityNumber(identityNumber)){
-            request.setAttribute("message4","Số CMND/CCCD sai định dạng hoặc đã tồn tại");
+            request.setAttribute("identityNumberError","Số CMND/CCCD sai định dạng hoặc đã tồn tại");
+            request.getRequestDispatcher("/signup.jsp").forward(request,response);
+        }else if (!ValidateCustomer.validateEmail(email)){
+            request.setAttribute("emailError","Email đã tồn tại");
             request.getRequestDispatcher("/signup.jsp").forward(request,response);
         }
-
     }
 }

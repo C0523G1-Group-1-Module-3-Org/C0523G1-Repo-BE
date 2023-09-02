@@ -31,7 +31,7 @@
                                 </div>
 
                                 <p class="text-danger" role="alert">
-                                    ${message4}
+                                    ${identityNumberError}
                                 </p>
 
                                 <div class="form-outline mb-4 form-group">
@@ -55,21 +55,25 @@
                                     </select>
                                 </div>
 
+                                <p class="text-danger" role="alert">
+                                    ${emailError}
+                                </p>
+
                                 <div class="form-outline mb-4 form-group">
                                     <label class="form-label" for="email">Email</label>
-                                    <input type="email" id="email" class="form-control form-control-lg" required/>
+                                    <input type="email" id="email" name="email" class="form-control form-control-lg" required/>
                                     <span class="form-message"></span>
                                 </div>
 
                                 <div class="form-outline mb-4 form-group">
                                     <label class="form-label" for="address">Địa chỉ</label>
-                                    <input type="text" id="address" class="form-control form-control-lg" required/>
+                                    <input type="text" id="address" name="address" class="form-control form-control-lg" required/>
                                     <span class="form-message"></span>
                                 </div>
                                 <hr style="margin: 15% 0%">
 
                                 <p class="text-danger" role="alert">
-                                    ${message1}
+                                    ${phoneNumberError}
                                 </p>
 
                                 <div class="form-outline mb-4 form-group">
@@ -78,7 +82,7 @@
                                 </div>
 
                                 <p class="text-danger" role="alert">
-                                    ${message2}
+                                    ${passwordError}
                                 </p>
 
                                 <div class="form-outline mb-4 form-group">
@@ -88,7 +92,7 @@
                                 </div>
 
                                 <p class="text-danger" role="alert">
-                                    ${message3}
+                                    ${passwordConfirmError}
                                 </p>
 
                                 <div class="form-outline mb-4 form-group">
@@ -110,7 +114,7 @@
         </div>
     </div>
 </section>
-<scrip src="./validator.js"></scrip>
+<scrip src="./validate_account.js"></scrip>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>

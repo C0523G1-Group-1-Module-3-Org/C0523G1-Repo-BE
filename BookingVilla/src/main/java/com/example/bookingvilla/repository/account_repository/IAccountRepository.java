@@ -6,7 +6,6 @@ import com.example.bookingvilla.model.Customer;
 public interface IAccountRepository {
     Account getAccountByUserNameAndPassword (String userName, String password);
     Account getAccountByUserName(String userName);
-
     void save(Account account);
 
 }
