@@ -7,5 +7,8 @@ public interface IAccountRepository {
     Account getAccountByUserNameAndPassword (String userName, String password);
     Account getAccountByUserName(String userName);
     void save(Account account);
+    void updatePassword (String password,String userName);
+    void getPassword (String identityNumber, String phoneNumber, String newPassword);
+
 
 }

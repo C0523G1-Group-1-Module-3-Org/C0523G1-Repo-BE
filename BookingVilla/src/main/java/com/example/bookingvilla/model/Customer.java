@@ -1,5 +1,7 @@
 package com.example.bookingvilla.model;
 
+import java.util.Objects;
+
 public class Customer {
     private int customerCode;
     private String customerName;
@@ -131,6 +133,19 @@ public class Customer {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return customerCode == customer.customerCode && isGender == customer.isGender && accountCode == customer.accountCode && isDelete == customer.isDelete && Objects.equals(customerName, customer.customerName) && Objects.equals(identityNumber, customer.identityNumber) && Objects.equals(dateOfBirth, customer.dateOfBirth) && Objects.equals(phoneNumber, customer.phoneNumber) && Objects.equals(email, customer.email) && Objects.equals(address, customer.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customerCode, customerName, identityNumber, dateOfBirth, isGender, phoneNumber, email, address, accountCode, isDelete);
     }
 
     @Override

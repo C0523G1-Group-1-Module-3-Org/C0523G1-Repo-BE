@@ -3,7 +3,7 @@
 // nhưng khi focus lại vào thẻ input thì xóa lỗi,
 // sai định dạng thì không cho submit.
 
-
+// A. LOGIN & SIGN-UP
 // 1. Số cmnd,cccd;
 function validateIdentityNumber(){
     let identityNumber = document.getElementById("identityNumber").value;
@@ -94,4 +94,78 @@ function clearErrorPasswordConfirm (){
     let passwordConfirmFormatError = document.getElementById("passwordConfirmFormatError");
     passwordConfirmFormatError.innerText = "";
 }
+//B.ĐỔI MẬT KHẨU
+
+function validatePhoneNumberUpdate(){
+    let userName = document.getElementById("userName").value;
+    let userNameForMatError = document.getElementById("userNameForMatError");
+    if (!/^(84|0[3|5|7|8|9])([0-9]{7,8})$/.test(userName)){
+        userNameForMatError.innerText = "Số điện thoại sai định dạng";
+        document.getElementById("btn-update-pass").disabled = true;
+    }
+    else {
+        userNameForMatError.innerText = "";
+        document.getElementById("btn-update-pass").disabled = false;
+    }
+}
+function clearErrorPhoneNumberUpdate (){
+    let userNameForMatError = document.getElementById("userNameForMatError");
+    userNameForMatError.innerText = "";
+}
+
+
+function validatePasswordUpdate(){
+    let oldPass = document.getElementById("oldPass").value;
+    let oldPasswordUpdateFormatError = document.getElementById("oldPasswordUpdateFormatError");
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(oldPass)){
+        oldPasswordUpdateFormatError.innerText = "Mật khẩu ít nhất 8 kí tự. Bao gồm số, chữ và ít nhất một chữ cái in hoa";
+        document.getElementById("btn-update-pass").disabled = true;
+    }
+    else {
+        oldPasswordUpdateFormatError.innerText = "";
+        document.getElementById("btn-update-pass").disabled = false;
+    }
+}
+function clearErrorPasswordUpdate (){
+    let oldPasswordUpdateFormatError = document.getElementById("oldPasswordUpdateFormatError");
+    oldPasswordUpdateFormatError.innerText = "";
+}
+
+function validateNewPasswordUpdate(){
+    let newPass = document.getElementById("newPass").value;
+    let newPasswordFormatError = document.getElementById("newPasswordFormatError");
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(newPass)){
+        newPasswordFormatError.innerText = "Mật khẩu ít nhất 8 kí tự. Bao gồm số, chữ và ít nhất một chữ cái in hoa";
+        document.getElementById("btn-update-pass").disabled = true;
+    }
+    else {
+        newPasswordFormatError.innerText = "";
+        document.getElementById("btn-update-pass").disabled = false;
+    }
+}
+function clearErrorNewPasswordUpdate (){
+    let newPasswordUpdateFormatError = document.getElementById("newPasswordFormatError");
+    newPasswordUpdateFormatError.innerText = "";
+}
+
+function validatePasswordUpdateConfirm(){
+    let newPass = document.getElementById("newPass").value;
+    let passConfirm = document.getElementById("passConfirm").value;
+    let passwordConfirmError = document.getElementById("passwordConfirmError");
+    if (newPass != passConfirm){
+        passwordConfirmError.innerText = "Mật khẩu không trùng khớp!";
+        document.getElementById("btn-update-pass").disabled = true;
+    }
+    else {
+        passwordConfirmError.innerText = "";
+        document.getElementById("btn-update-pass").disabled = false;
+    }
+}
+function clearErrorPasswordUpdateConfirm (){
+    let passwordConfirmError = document.getElementById("passwordConfirmError");
+    passwordConfirmError.innerText = "";
+}
+
+
+
 

@@ -101,7 +101,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button onclick="validatePhoneNumber()" id="submitButton" style="border-radius: 50px; margin-top: 5%" type="submit" class="backgroundcolor-2 hover">Đăng ký</button>
+                                    <button  onclick="validatePhoneNumber()" id="submitButton" style="border-radius: 50px; margin-top: 5%" type="submit" class="backgroundcolor-2 hover btn-sign-up">Đăng ký</button>
                                 </div>
                                 <p class="text-center text-muted mt-5 mb-0">Đã có tài khoản?
                                     <a href="login.jsp" class="fw-bold text-body"><u>Nhấn vào để đăng nhập</u></a></p>

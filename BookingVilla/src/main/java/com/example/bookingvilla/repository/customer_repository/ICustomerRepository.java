@@ -6,4 +6,5 @@ public interface ICustomerRepository {
     Customer getCustomerByIdentityNumber(String identityNumber);
     Customer getCustomerByEmail (String email);
     void saveCustomer (Customer customer);
+    Customer getCustomerByPhoneNumber (String phoneNumber);
 }

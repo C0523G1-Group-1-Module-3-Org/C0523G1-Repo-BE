@@ -18,13 +18,27 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
 }
-button {
-    width: 70%;
-    height: 100%;
-    padding: 5%;
-    border-radius: 100px;
-    margin-top: 5%;
-    font-size: 20px;
-    border: none;
-}
 
+.btn-login{
+    border-radius: 50px;
+    margin-left: 40px;
+    margin-top: 15%;
+    height: 75px;
+    width: 80%;
+    border: none;
+    font-size: 20px;
+}
+.btn-sign-up{
+    border-radius: 50px;
+    margin-top: 15%;
+    height: 75px;
+    width: 80%;
+    border: none;
+    font-size: 20px;
+}
+.modal-btn{
+    border: none;
+    border-radius: 50px;
+    width: 20%;
+    height: 60px;
+}

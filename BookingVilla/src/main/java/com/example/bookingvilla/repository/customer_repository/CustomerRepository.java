@@ -15,6 +15,8 @@ public class CustomerRepository implements ICustomerRepository{
             "WHERE email = ?";
     private static final String INSERT_CUSTOMER = "INSERT INTO customers (name, identity_number, birthday, " +
             "gender, phone_number, email, address, account_code) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String GET_CUSTOMER_BY_PHONE_NUMBER = "SELECT * FROM customers\n" +
+            "WHERE phone_number = ?;";
     @Override
     public Customer getCustomerByIdentityNumber(String identityNumber) {
         Connection connection = DatabaseConnection.getConnection();
@@ -85,6 +87,31 @@ public class CustomerRepository implements ICustomerRepository{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    @Override
+    public Customer getCustomerByPhoneNumber(String phoneNumber) {
+        Connection connection = DatabaseConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_CUSTOMER_BY_PHONE_NUMBER);
+            preparedStatement.setString(1,phoneNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                return new Customer(resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getBoolean(5),
+                        resultSet.getString(6),
+                        resultSet.getString(7),
+                        resultSet.getString(8),
+                        resultSet.getInt(9),
+                        resultSet.getBoolean(10));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 }

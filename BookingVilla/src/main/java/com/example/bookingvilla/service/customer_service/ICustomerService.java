@@ -4,4 +4,7 @@ import com.example.bookingvilla.model.Customer;
 
 public interface ICustomerService {
     void saveCustomer (Customer customer);
+    Customer getCustomerByPhoneNumber (String phoneNumber);
+    Customer getCustomerByIdentityNumber(String identityNumber);
+
 }

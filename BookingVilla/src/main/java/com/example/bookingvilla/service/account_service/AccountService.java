@@ -19,9 +19,18 @@ public class AccountService implements IAccountService {
     public void save(Account account) {
         iAccountRepository.save(account);
     }
-
     @Override
     public Account getAccountByUserName(String userName) {
         return iAccountRepository.getAccountByUserName(userName);
+    }
+
+    @Override
+    public void updatePassword(String password,String userName) {
+        iAccountRepository.updatePassword(password,userName);
+    }
+
+    @Override
+    public void getPassword(String identityNumber, String phoneNumber, String newPassword) {
+        iAccountRepository.getPassword(identityNumber,phoneNumber,newPassword);
     }
 }

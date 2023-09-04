@@ -10,4 +10,14 @@ public class CustomerService implements ICustomerService{
     public void saveCustomer(Customer customer) {
         iCustomerRepository.saveCustomer(customer);
     }
+
+    @Override
+    public Customer getCustomerByPhoneNumber(String phoneNumber) {
+        return iCustomerRepository.getCustomerByPhoneNumber(phoneNumber);
+    }
+
+    @Override
+    public Customer getCustomerByIdentityNumber(String identityNumber) {
+        return iCustomerRepository.getCustomerByIdentityNumber(identityNumber);
+    }
 }
