@@ -6,8 +6,6 @@ import com.example.bookingvilla.repository.account_repository.AccountRepository;
 import com.example.bookingvilla.repository.account_repository.IAccountRepository;
 
 public class ValidateAccount {
-    //    private static final String REGEX_PHONE_NUMBER = "^(84|0[3|5|7|8|9])+([0-9]{7,8})$";
-//    private static final String REGEX_PASSWORD = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
     private static IAccountRepository iAccountRepository = new AccountRepository();
 
     public static boolean validatePhoneNumberToSignUp(String userName) {

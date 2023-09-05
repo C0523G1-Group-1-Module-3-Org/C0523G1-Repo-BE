@@ -4,3 +4,6 @@ function redirectToLogin() {
 function redirectToSignUp() {
     window.location.href = "signup.jsp";
 }
+function redirectToUserInformation() {
+    window.location.href = "user-information.jsp";
+}

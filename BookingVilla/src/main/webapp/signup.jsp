@@ -31,7 +31,6 @@
                                 </div>
 
                                 <p class="text-danger" role="alert">${identityNumberError}</p>
-
                                 <span id="identityNumberFormatError" class="text-danger" role="alert"></span>
 
                                 <div class="form-outline mb-4">
@@ -56,7 +55,6 @@
                                 </div>
 
                                 <p class="text-danger" role="alert">${emailError}</p>
-
                                 <span id="emailFormatError" class="text-danger" role="alert"> </span>
 
                                 <div class="form-outline mb-4">

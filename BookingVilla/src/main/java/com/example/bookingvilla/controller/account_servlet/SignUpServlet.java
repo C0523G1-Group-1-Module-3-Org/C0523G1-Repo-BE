@@ -54,6 +54,5 @@ public class SignUpServlet extends HttpServlet {
             request.setAttribute("emailError", "Email đã đăng ký");
             request.getRequestDispatcher("signup.jsp").forward(request, response);
         }
-
     }
 }

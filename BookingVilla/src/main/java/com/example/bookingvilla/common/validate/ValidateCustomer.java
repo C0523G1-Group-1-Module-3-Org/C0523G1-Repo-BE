@@ -5,7 +5,6 @@ import com.example.bookingvilla.repository.customer_repository.CustomerRepositor
 import com.example.bookingvilla.repository.customer_repository.ICustomerRepository;
 
 public class ValidateCustomer {
-//    private static final String REGEX_IDENTITY_NUMBER = "^[0-9]{10,12}$";
     private static ICustomerRepository iCustomerRepository = new CustomerRepository();
 
     public static boolean validateIdentityNumber(String identityNumber) {

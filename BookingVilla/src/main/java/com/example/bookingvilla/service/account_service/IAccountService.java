@@ -8,6 +8,8 @@ public interface IAccountService {
     Account getAccountByUserName(String userName);
     void updatePassword (String password,String userName);
     void getPassword (String identityNumber, String phoneNumber, String newPassword);
+    void updateUserName (String userName,int accountCode);
+    void deleteAccountAndCustomer (int accountCode);
 
 
 }

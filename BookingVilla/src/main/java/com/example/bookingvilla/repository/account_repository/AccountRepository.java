@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 
 public class AccountRepository implements IAccountRepository{
     private static final String SELECT_ACCOUNT = "SELECT * FROM villa_booking.accounts\n" +
-            "WHERE user_name = ? AND password_account = ?";
+            "WHERE user_name = ? AND password_account = ? AND is_delete <> 1";
     private static final String SELECT_ACCOUNT_BY_USER_NAME = "SELECT * FROM villa_booking.accounts\n" +
             "WHERE user_name = ?" ;
 
@@ -22,7 +22,12 @@ public class AccountRepository implements IAccountRepository{
             "UPDATE accounts\n" +
             "SET password_account = ?\n" +
             "WHERE user_name = ?;\n" ;
+    private static final String  UPDATE_USER_NAME =
+            "UPDATE accounts\n" +
+                    "SET user_name = ?\n" +
+                    "WHERE account_code = ?;\n" ;
     private static final String GET_PASSWORD = "call  resetPasswordByCMNDAndUsername(?,?,?);\n";
+    private static final String DELETE_ACCOUNT_AND_CUSTOMER = "call deleteAccountAndCustomer(?)";
 
 
     @Override
@@ -81,17 +86,17 @@ public class AccountRepository implements IAccountRepository{
     }
 
     @Override
-    public void updatePassword(String password,String userName) {
-        Connection connection = DatabaseConnection.getConnection();
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PASSWORD);
-            preparedStatement.setString(1,password);
-            preparedStatement.setString(2,userName);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        public void updatePassword(String password,String userName) {
+            Connection connection = DatabaseConnection.getConnection();
+            try {
+                PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PASSWORD);
+                preparedStatement.setString(1,password);
+                preparedStatement.setString(2,userName);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
-    }
 
     @Override
     public void getPassword(String identityNumber, String phoneNumber, String newPassword) {
@@ -101,6 +106,31 @@ public class AccountRepository implements IAccountRepository{
             preparedStatement.setString(1,identityNumber);
             preparedStatement.setString(2,phoneNumber);
             preparedStatement.setString(3,newPassword);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void updateUserName(String userName,int accountCode) {
+        Connection connection = DatabaseConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER_NAME);
+            preparedStatement.setString(1,userName);
+            preparedStatement.setInt(2,accountCode);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void deleteAccountAndCustomer(int accountCode) {
+        Connection connection = DatabaseConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_ACCOUNT_AND_CUSTOMER);
+            preparedStatement.setInt(1,accountCode);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

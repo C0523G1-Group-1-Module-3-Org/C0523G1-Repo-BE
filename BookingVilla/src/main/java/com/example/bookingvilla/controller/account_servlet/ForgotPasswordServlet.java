@@ -30,15 +30,15 @@ public class ForgotPasswordServlet extends HttpServlet {
         Customer customer1 = iCustomerService.getCustomerByPhoneNumber(phoneNumber);
         if (customer1 == null){
             request.setAttribute("phoneNumberError","Số điện thoại không tồn tại");
-            request.getRequestDispatcher("forgot_password.jsp").forward(request,response);
+            request.getRequestDispatcher("forgot-password.jsp").forward(request,response);
         }
         else if(customer == null){
             request.setAttribute("identityNumberError","Số CMND/CCCD không tồn tại");
-            request.getRequestDispatcher("forgot_password.jsp").forward(request,response);
+            request.getRequestDispatcher("forgot-password.jsp").forward(request,response);
         }
         else if (!customer1.equals(customer)) {
             request.setAttribute("phoneNumberError","Số điện thoại và chứng minh nhân dân không thuộc một tài khoản");
-            request.getRequestDispatcher("forgot_password.jsp").forward(request,response);
+            request.getRequestDispatcher("forgot-password.jsp").forward(request,response);
         }else if (customer.equals(customer1)) {
             accountService.getPassword(identityNumber,phoneNumber,password);
             response.sendRedirect("login.jsp");

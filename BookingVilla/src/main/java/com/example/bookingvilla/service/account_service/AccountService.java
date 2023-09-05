@@ -33,4 +33,14 @@ public class AccountService implements IAccountService {
     public void getPassword(String identityNumber, String phoneNumber, String newPassword) {
         iAccountRepository.getPassword(identityNumber,phoneNumber,newPassword);
     }
+
+    @Override
+    public void updateUserName(String userName, int accountCode) {
+        iAccountRepository.updateUserName(userName,accountCode);
+    }
+
+    @Override
+    public void deleteAccountAndCustomer(int accountCode) {
+        iAccountRepository.deleteAccountAndCustomer(accountCode);
+    }
 }
