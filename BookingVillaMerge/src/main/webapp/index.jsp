@@ -103,6 +103,15 @@
     <div id="close-detail-board" class="backgroundcolor-3 hover boxshadow-outset" onclick="close_detail_board()"></div>
 </div>
 
+
+<div id="logout-board" class="backgroundcolor-4">
+    <div id="logout-alert">
+        <p>Sau khi đăng xuất, bạn không thể sử dụng các chức năng</p>
+        <p>Tự động đăng xuất sau <span id="count-down">10</span> giây</p>
+    </div>
+    <button>Đăng xuất</button>
+    <button>Hủy</button>
+</div>
 </body>
 
 <script src="css_index/calendar.js"></script>

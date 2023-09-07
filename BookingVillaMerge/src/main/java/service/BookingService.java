@@ -1,8 +1,8 @@
 package service;
 
 import model.Booking;
-import repository.booking.BookingRepository;
-import repository.booking.IBookingRepository;
+import repository.admin_booking.BookingRepository;
+import repository.admin_booking.IBookingRepository;
 
 
 import java.util.List;

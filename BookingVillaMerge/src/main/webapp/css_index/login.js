@@ -38,6 +38,7 @@ function doGetByButton(action){
         case 'my profile':
             break;
         case 'my booked':
+            window.location.href = "/booking"
             break;
         case 'new booking':
             break;
@@ -48,7 +49,7 @@ function doGetByButton(action){
             window.location.href = 'mailto:lequocthang307@gmail.com';
             break;
         case 'accept booking':
-            window.location.href = "/booking?action=getAllBooking"
+            window.location.href = "/admin-booking?action=getAllBooking"
             break;
         case 'customer account':
             window.location.href = "/customer?action=getAllCustomer"

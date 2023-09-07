@@ -178,7 +178,7 @@ values
 (10, "https://drive.google.com/uc?id=1u2Q2Ki_GViZbU-OUDj_Udv4Rqd5dwy5i");
 insert into `bookings`(`check_in`,`check_out`,`price`,`deposit`,`villa_id`,`customer_code`)
 values
-("2023-05-10","2023-05-20", 44100000, 5000000, 2, 1),
+("2023-05-10","2023-05-20", 44100000, 5000000, 2, 3),
 ("2023-04-01","2023-04-02", 2560000, 500000, 1, 3),
 ("2022-08-10","2022-08-11", 3730000, 400000, 10, 4);
 insert into `bookings`(`check_in`,`check_out`,`price`,`deposit`,`villa_id`,`customer_code`,`check_in_person_name`,`check_in_person_phone_number`)
@@ -265,3 +265,93 @@ where customer_code = delete_id;
 end //
 DELIMITER ;
 
+-- Nhật
+-- Chưa duyệt
+delimiter //
+create procedure show_list_pending(find_by_account_code int)
+begin
+-- select bookings.booking_id, check_in, check_out, price, deposit, villa_id
+select bookings.*
+from bookings
+join customers on bookings.customer_code = customers.customer_code
+join accounts on  customers.account_code = accounts.account_code
+where bookings.is_delete = 0 and is_pending = 1 and accounts.account_code = find_by_account_code
+group by bookings.booking_id;
+end //
+delimiter ;
+call show_list_pending(3);
+delimiter //
+create procedure add_booking(`new_check_in` date,`new_check_out` date,`new_price` int,`new_deposit` int,
+	`new_check_in_person_name` varchar(50),`new_check_in_person_phone_number` varchar(50),`new_villa_id` int,`new_customer_code` int)
+begin
+insert into `bookings`(`check_in`,`check_out`,`price`,`deposit`,`check_in_person_name`,`check_in_person_phone_number`,`villa_id`,`customer_code`)
+values
+(`new_check_in`,`new_check_out`,`new_price`,`new_deposit`,`new_check_in_person_name`,`new_check_in_person_phone_number`,`new_villa_id`,`new_customer_code`);
+end //
+delimiter ;
+-- Đã duyệt
+delimiter //
+create procedure show_list_approved(find_by_account_code int)
+begin
+select bookings.*
+from bookings
+join customers on bookings.customer_code = customers.customer_code
+join accounts on  customers.account_code = accounts.account_code
+where bookings.is_delete = 0 and is_pending = 0 and accounts.account_code = find_by_account_code
+group by bookings.booking_id;
+end //
+delimiter ;
+call show_list_approved();
+-- Đã hủy
+delimiter //
+create procedure show_list_delete(find_by_account_code int)
+begin
+select bookings.*
+from bookings
+join customers on bookings.customer_code = customers.customer_code
+join accounts on  customers.account_code = accounts.account_code
+where bookings.is_delete = 1 and accounts.account_code = find_by_account_code
+group by bookings.booking_id;
+end //
+delimiter ;
+-- Update booking
+delimiter //
+create procedure update_booking(find_by_booking_id int, check_in_person_name_update varchar(50), check_in_person_phone_number_update varchar(50))
+begin
+update bookings
+set check_in_person_name = check_in_person_name_update,
+	check_in_person_phone_number = check_in_person_phone_number_update
+where booking_id = find_by_booking_id;
+end //
+delimiter ;
+-- Hủy booking
+delimiter //
+create procedure delete_booking(find_by_booking_id int)
+begin
+update bookings
+set is_delete = 1
+where booking_id = find_by_booking_id;
+end //
+delimiter ;
+
+-- Đạt
+-- 1. Xóa tài khoản
+delimiter //
+create procedure deleteAccountAndCustomer(account_code int)
+begin
+update accounts a
+join customers c on a.account_code = c.account_code
+set a.is_delete = 1, c.is_delete = 1
+where a.account_code = account_code;
+end //
+delimiter ;
+-- 2. Lấy lại mật khẩu
+delimiter //
+create procedure resetPasswordByIdentityNumberAndPhoneNumber (p_newPassword varchar(100), p_cmnd varchar(20),p_username varchar(20))
+begin
+UPDATE accounts AS a
+    JOIN customers AS c ON a.account_code = c.account_code
+    SET a.password_account = p_newPassword
+    WHERE c.phone_number= p_username AND c.identity_number = p_cmnd;
+END // 
+delimiter ;

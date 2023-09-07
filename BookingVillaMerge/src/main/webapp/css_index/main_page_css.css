@@ -398,6 +398,40 @@
     background-size: cover;
     border: #5D7B6F 1px solid;
 }
+#logout-board{
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "logout-alert logout-alert" "close logout";
+    border-radius: 20px;
+    top: 10%;
+    width: 25%;
+    left: 37.5%;
+    padding-top: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+}
+#logout-alert{
+    grid-area: logout-alert;
+}
+#logout-board button{
+    width: 90%;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+}
+#logout-board button:hover{
+    scale: 1.05;
+    transition-duration: 0.2s;
+}
+#logout-board p{
+    color: white;
+}
+#count-down{
+    color: red;
+    scale: 1.1;
+}
 @keyframes slide {
     from{
         left: -100%;
@@ -478,5 +512,4 @@
 #footer p{
     display: inline-block;
     font-size: 50px;
-
 }

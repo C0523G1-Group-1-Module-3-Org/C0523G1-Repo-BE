@@ -34,7 +34,7 @@
             <a style="text-decoration: none" href="/customer?action=getAllCustomer" class="nav_link">
                 <ion-icon name="person-circle-outline"></ion-icon>
                 Quản lí khách hàng</a>
-            <a style="text-decoration: none" href="/booking?action=getAllBooking" class="nav_link">
+            <a style="text-decoration: none" href="/admin-booking?action=getAllBooking" class="nav_link">
                 <ion-icon name="pencil-outline"></ion-icon>
                 Duyệt booking</a>
         </ul>

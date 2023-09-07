@@ -1,14 +1,22 @@
 package repository.booking;
 
-import model.Booking;
+import model.booking.Booking;
 
 import java.util.List;
 
 public interface IBookingRepository {
-    List<Booking> getAllBooking();
+    Booking findByBookingId(int bookingId, int findByAccountCode);
 
-    void updateBooking(int bookingIdApproved);
+    List<Booking> showListPending(int findByAccountCode);
 
-    void deleteBooking(int id);
+    List<Booking> showListApproved(int findByAccountCode);
+
+    List<Booking> showListDelete(int findByAccountCode);
+
+    void save(Booking booking);
+
+    void update(int bookingIdUpdate, Booking booking);
+
+    void delete(int bookingIdDelete);
 
 }
