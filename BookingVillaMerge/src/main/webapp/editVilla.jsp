@@ -33,9 +33,10 @@
         </div>
     </div>
     <input id="villaId" type="hidden" name="villa-id">
+    <input id="deleteimg" type="hidden" name="img-delete">
 
     <div id="area"><p>Diện tích (m<sup>2</sup>)</p><input required id="input-area" name="area" type="number"></div>
-    <div id="width"><p>Chiều dài (m)</p><input required id="input-width" name="width" type="number"></div>
+    <div id="width"><p>Chiều dài (m)</p><input required id="input-width" name="width" type=""></div>
     <div id="deep"><p>Chiều sâu (m)</p><input required id="input-deep" name="deep" type="number"></div>
     <div id="price"><p>Giá thuê (VND)</p><input required id="input-price" name="price" type="number"></div>
 
@@ -56,7 +57,7 @@
 <form id="delete-board" action="/main-page-controller?action=delete-villa" method="post"
       class="backgroundcolor-2 boxshadow-outset">
     <div id="warning-delete-villa"></div>
-    <h2 id="alert-delete-board">Bạn muốn xóa Villa <span id="villa-delete-id"></span> ???</h2>
+    <h2 id="alert-delete-board">Bạn muốn xóa <span id="villa-delete-id"></span> ???</h2>
     <input id="villa-delete" name="villa-id" type="hidden">
     <button id="delete-delete-board" class="backgroundcolor-4 hover boxshadow-inset" type="submit">Xóa</button>
     <button id="close-delete-board" class="backgroundcolor-4 hover boxshadow-inset" type="button" onclick="closeDeleteBoard()">Trở lại</button>
@@ -68,6 +69,10 @@
     </div>
     <button id="logout-now" onclick="logoutNow()">Đăng xuất</button>
     <button onclick="cancelLogout()">Hủy</button>
+</div>
+<div id="alert-choose-picture" class="backgroundcolor-4">
+    <p>Phải có ít nhất 1 hình minh họa cho Villa</p>
+    <button onclick="closeAlertChooseAllPicture()">Đóng</button>
 </div>
 </body>
 <script src="css_index/villaclass.js"></script>

@@ -306,6 +306,40 @@
     scale: 1.1;
     color: red;
 }
+#alert-choose-picture{
+    position: fixed;
+    display: none;
+    border-radius: 20px;
+    top: 10%;
+    width: 20%;
+    left: 40%;
+    padding-top: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    color: red;
+
+    align-items: center;
+    text-align: center; /* Căn giữa nội dung ngang */
+    flex-direction: column;
+    justify-content: center;
+}
+#alert-choose-picture button{
+    width: 40%;
+    padding: 20px;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+    border: none;
+}
+#alert-choose-picture button:hover{
+    scale: 1.05;
+    transition-duration: 0.2s;
+}
+#alert-choose-picture p{
+    font-size: 20px;
+    scale: 1.1;
+    color: white;
+}
 .hover{
     transition-duration: 0.2s;
 }

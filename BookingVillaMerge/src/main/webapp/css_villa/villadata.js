@@ -1,4 +1,6 @@
 let intervalList = [];
+let deleteList = [];
+let qcImg;
 function showVillaList(){
     let data = "";
     for (let i = 0; i < dataVilla.length; i++){
@@ -33,9 +35,12 @@ function stopHover(index){
     intervalList = [];
 }
 function openEditBoard(index){
+    deleteList = [];
     let villaDetail = dataVilla[index];
     let board = document.getElementById("edit-board");
     board.style.display = "grid";
+
+    qcImg = villaDetail.getImg().length;
 
     document.getElementById("input-area").value = villaDetail.area;
     document.getElementById("input-width").value = villaDetail.width;
@@ -52,9 +57,10 @@ function openEditBoard(index){
     document.getElementById("input-capacity").value = villaDetail.capacity;
     document.getElementById("villaId").value = villaDetail.getId();
 
-    let arrayPicture = `<img id="add-detail-picture" onclick="addDetailPicture(${villaDetail.getId()})" class="array-detail-picture boxshadow-outset hover-in"></img>`;
+    let arrayPicture = `<img id="add-detail-picture" onclick="addDetailPicture(${villaDetail.getId()})" class="array-detail-picture boxshadow-outset hover-in">`;
     for (let i = 0; i < villaDetail.getImg().length; i++){
-        arrayPicture += `<img src="${villaDetail.getImg()[i]}" class="array-detail-picture boxshadow-outset"></img>`
+        arrayPicture += `<img id="array-picture-${villaDetail.getImgId()[i]}" onclick="tickPicture(${villaDetail.getImgId()[i]})" src="${villaDetail.getImg()[i]}" 
+                            class="hover-in array-detail-picture boxshadow-outset">`
     }
     document.getElementById("picture").innerHTML = arrayPicture;
 
@@ -70,7 +76,7 @@ function deleteVilla(villaId){
     let villaDelete = document.getElementById("delete-board");
     villaDelete.style.display = "grid";
     document.getElementById("villa-delete-id").innerHTML = villaId
-    document.getElementById("villa-delete").value = villaId;
+    document.getElementById("villa-delete").value = "Villa " + villaId;
 }
 
 function closeDeleteBoard(){
@@ -107,4 +113,29 @@ function cancelLogout(){
     clearInterval(countdownInterval);
     let logoutBoard = document.getElementById("logout-board");
     logoutBoard.style.display = "none";
+}
+function tickPicture(index){
+    let stringIndex = index + "";
+    let style = "3px solid red"
+    let picture = document.getElementById("array-picture-" + index);
+    if (picture.style.border + "" == style){
+        picture.style.border = "none";
+        deleteList = deleteList.filter(item => item !== stringIndex);
+    } else {
+        if (qcImg - 1 == deleteList.length){
+            alertChooseAllPicture();
+        } else {
+            picture.style.border = style;
+            deleteList.push(stringIndex);
+        }
+    }
+    document.getElementById("deleteimg").value = deleteList;
+}
+function alertChooseAllPicture(){
+    let alertWarning = document.getElementById("alert-choose-picture");
+    alertWarning.style.display = "flex";
+}
+function closeAlertChooseAllPicture(){
+    let alertWarning = document.getElementById("alert-choose-picture");
+    alertWarning.style.display = "none";
 }

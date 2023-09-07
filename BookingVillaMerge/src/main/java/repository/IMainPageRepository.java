@@ -13,4 +13,5 @@ public interface IMainPageRepository {
     void editVilla(int villaId,double area,double width,double deep,int price,int level,int garage,int gym,int relax,int toilet,int living,int kitchen,int bedroom, int capacity);
     void deleteVilla(int villaId);
     List<String> login(String id, String password);
+    void deletePicture(String[] list);
 }

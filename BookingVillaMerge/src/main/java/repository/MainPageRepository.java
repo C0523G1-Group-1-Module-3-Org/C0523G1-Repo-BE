@@ -11,6 +11,7 @@ import java.util.Map;
 public class MainPageRepository implements IMainPageRepository{
 
     private static final String GET_DETAIL_IMG = "call get_detail_img();";
+    private static final String DELETE_PIC = "update `villa_booking`.`image_detail_links` set `is_delete` = 1 where (`image_id` = ?);";
     private static final String GET_ALL_VILLA = "call get_all_villa();";
     private static final String LOGIN = "call check_account(?,?);";
     private static final String DELETE_VILLA = "update `villa_booking`.`villas` set `is_delete` = 1 where (`villa_id` = ?);";
@@ -159,6 +160,21 @@ public class MainPageRepository implements IMainPageRepository{
             return new ArrayList<>();
         } else {
             return accounts.get(0);
+        }
+    }
+
+    @Override
+    public void deletePicture(String[] list) {
+        Connection connection = BaseRepository.getConnection();
+        for (String str : list){
+            try {
+                System.out.println(Integer.parseInt(str));
+                PreparedStatement statement = connection.prepareStatement(DELETE_PIC);
+                statement.setInt(1, Integer.parseInt(str));
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

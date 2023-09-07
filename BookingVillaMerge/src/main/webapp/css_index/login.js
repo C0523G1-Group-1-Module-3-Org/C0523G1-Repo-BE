@@ -9,7 +9,6 @@ function displayButton(role){
         case "1":
             data = `<button onclick="doGetByButton('my profile')" class="backgroundcolor-2 hover">Tài khoản</button>
                     <button onclick="doGetByButton('my booked')" class="backgroundcolor-2 hover">Đã đặt</button>
-                    <button onclick="doGetByButton('new booking')" class="backgroundcolor-2 hover">Đặt mới</button>
                     <button onclick="doGetByButton('contact')" class="backgroundcolor-2 hover">Liên hệ</button>
                     <button onclick="doGetByButton('feedback')" class="backgroundcolor-2 hover">Phản hồi</button>`
             break;
@@ -36,12 +35,10 @@ function displayButton(role){
 function doGetByButton(action){
     switch (action){
         case 'my profile':
+            window.location.href = "/login?action=showInformationUser";
             break;
         case 'my booked':
-            window.location.href = "/booking"
-            break;
-        case 'new booking':
-
+            window.location.href = "/booking";
             break;
         case 'contact':
             window.open('tel:0764843894', '_blank');

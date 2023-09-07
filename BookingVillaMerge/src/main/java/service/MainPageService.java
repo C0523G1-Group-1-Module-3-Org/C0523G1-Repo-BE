@@ -54,6 +54,10 @@ public class MainPageService implements IMainPageService{
         int bedroom = Integer.parseInt(request.getParameter("bedroom"));
         int capacity = Integer.parseInt(request.getParameter("capacity"));
 
+        String[] deletePicture = request.getParameter("img-delete").split(",");
+        if (deletePicture.length != 0){
+            mainPageRepository.deletePicture(deletePicture);
+        }
         mainPageRepository.editVilla(villaId, area, width, deep, price, level, garage,
                 gym, relax, toilet, living, kitchen, bedroom, capacity);
     }

@@ -1,8 +1,8 @@
 package controller;
 
 import model.Booking;
-import service.BookingService;
-import service.IBookingService;
+import service.admin_booking.BookingService;
+import service.admin_booking.IBookingService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
