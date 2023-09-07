@@ -99,7 +99,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
-                        <button type="submit" class="btn btn-primary">Xoá</button>
+                        <button type="submit" class="btn btn-primary">Xoá a</button>
                     </div>
                 </form>
             </div>
