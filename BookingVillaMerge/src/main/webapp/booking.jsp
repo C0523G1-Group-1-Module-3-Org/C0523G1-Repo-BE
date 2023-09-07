@@ -24,7 +24,7 @@
     <h5 style="line-height: 40px">Đặt phòng villa</h5>
 </div>
 
-<div class="col-12 bg-image" style="background-image: url('img_booking/logo.png'); width: 100%; height: 293px; margin: auto;
+<div class="col-12 bg-image" style=" width: 100%; height: 293px; margin: auto;
                     background-size: cover"></div>
 
 <div class="p-5 bg-light" style="margin: -100px 10%; border: 1px solid #EAE7D6; border-radius: 2%;background: hsla(0, 0%, 100%, 0.8);

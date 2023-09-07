@@ -268,6 +268,40 @@
     border-radius: 30px;
     font-size: 120%;
 }
+#logout-board{
+    position: fixed;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "logout-alert logout-alert" "close logout";
+    border-radius: 20px;
+    top: 10%;
+    width: 26%;
+    left: 38%;
+    padding-top: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+}
+#logout-alert{
+    grid-area: logout-alert;
+}
+#logout-board button{
+    width: 90%;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+}
+#logout-board button:hover{
+    scale: 1.05;
+    transition-duration: 0.2s;
+}
+#logout-board p{
+    color: white;
+}
+#count-down{
+    color: red;
+    scale: 1.1;
+}
 #villa-delete-id{
     scale: 1.1;
     color: red;

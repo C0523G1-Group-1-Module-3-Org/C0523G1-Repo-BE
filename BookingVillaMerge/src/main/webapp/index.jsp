@@ -109,8 +109,8 @@
         <p>Sau khi đăng xuất, bạn không thể sử dụng các chức năng</p>
         <p>Tự động đăng xuất sau <span id="count-down">10</span> giây</p>
     </div>
-    <button>Đăng xuất</button>
-    <button>Hủy</button>
+    <button id="logout-now" onclick="logoutNow()">Đăng xuất</button>
+    <button onclick="cancelLogout()">Hủy</button>
 </div>
 </body>
 

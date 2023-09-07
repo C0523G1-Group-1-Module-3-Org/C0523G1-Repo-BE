@@ -1,6 +1,6 @@
 function login(userName){
-    let data = `<div id="userName">${userName}</div>
-                <a href="/main-page-controller?action=logout" id="logout" class="backgroundcolor-4 hover">Đăng xuất</a>`
+    let data = `<div  id="userName"><a href="/login?action=showInformationUser">${userName}</a></div>
+                <a onclick="logout()" id="logout" class="backgroundcolor-4 hover">Đăng xuất</a>`
     document.getElementById("sign").innerHTML = data;
 }
 function displayButton(role){
@@ -41,6 +41,7 @@ function doGetByButton(action){
             window.location.href = "/booking"
             break;
         case 'new booking':
+
             break;
         case 'contact':
             window.open('tel:0764843894', '_blank');
@@ -61,4 +62,32 @@ function doGetByButton(action){
             window.location.href = "/main-page-controller?action=villaManage"
             break;
     }
+}
+let countdownInterval;
+function logout(){
+    document.getElementById("count-down").innerHTML = "10";
+    let logoutBoard = document.getElementById("logout-board");
+    logoutBoard.style.display = "grid";
+
+    let buttonElement = document.getElementById("logout-now");
+    let countdown = 10;
+
+    countdownInterval = setInterval(function() {
+        countdown--;
+        document.getElementById("count-down").innerHTML = countdown;
+
+        if (countdown === 0) {
+            clearInterval(countdownInterval);
+            buttonElement.removeAttribute('disabled');
+            buttonElement.click();
+        }
+    }, 1000);
+}
+function logoutNow(){
+    window.location.href = "/main-page-controller?action=logout";
+}
+function cancelLogout(){
+    clearInterval(countdownInterval);
+    let logoutBoard = document.getElementById("logout-board");
+    logoutBoard.style.display = "none";
 }

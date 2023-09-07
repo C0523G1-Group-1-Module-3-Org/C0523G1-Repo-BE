@@ -80,3 +80,31 @@ function closeDeleteBoard(){
 function backToMainPage(){
     window.location.href = "/main-page-controller?action=backToMain";
 }
+let countdownInterval;
+function logout(){
+    document.getElementById("count-down").innerHTML = "10";
+    let logoutBoard = document.getElementById("logout-board");
+    logoutBoard.style.display = "grid";
+
+    let buttonElement = document.getElementById("logout-now");
+    let countdown = 10;
+
+    countdownInterval = setInterval(function() {
+        countdown--;
+        document.getElementById("count-down").innerHTML = countdown;
+
+        if (countdown === 0) {
+            clearInterval(countdownInterval);
+            buttonElement.removeAttribute('disabled');
+            buttonElement.click();
+        }
+    }, 1000);
+}
+function logoutNow(){
+    window.location.href = "/main-page-controller?action=logout";
+}
+function cancelLogout(){
+    clearInterval(countdownInterval);
+    let logoutBoard = document.getElementById("logout-board");
+    logoutBoard.style.display = "none";
+}

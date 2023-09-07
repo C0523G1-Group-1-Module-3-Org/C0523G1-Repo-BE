@@ -60,7 +60,7 @@ function detailVilla(index){
 
     let price = `<p class="backgroundcolor-3 hover boxshadow-outset" id="detail-board-booking-price"`;
     if (checkRole){
-        price += ` onclick="booking()">Booking : ${toPriceString(villa.getPrice())}`;
+        price += ` onclick="booking(${villa.getId()})">Booking : ${toPriceString(villa.getPrice())}`;
     } else {
         price += ` onclick="signup()">Đăng nhập để sử dụng`;
     }
@@ -126,7 +126,9 @@ function closeLogin(){
     loginButton.style.display = "block";
     signUpButton.style.display = "block";
 }
-function booking(){}
+function booking(index){
+    window.location.href = "/booking?action=showFormCreateBooking&index=" + index;
+}
 function signup(){
     window.location.href = "login.jsp"
 }

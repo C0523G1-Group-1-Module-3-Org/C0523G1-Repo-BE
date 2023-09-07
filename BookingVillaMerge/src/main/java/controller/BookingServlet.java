@@ -1,6 +1,7 @@
 package controller;
 
 import model.booking.Booking;
+import repository.MainPageRepository;
 import service.booking.BookingService;
 import service.booking.IBookingService;
 
@@ -107,8 +108,8 @@ public class BookingServlet extends HttpServlet {
     }
 
     private void showFormCreateBooking(HttpServletRequest request, HttpServletResponse response){
-        int accountId = Integer.parseInt(request.getParameter("accountId"));
-        int villaId = Integer.parseInt(request.getParameter("villaId"));
+//        int accountId = MainPageController.getAccount();
+//        int villaId = Integer.parseInt(request.getParameter("index"));
 //        Account account = bookingService.findByIdAccount();
 //        Villa villa = bookingService.findByIdVilla();
 //        request.setAttribute("account",account);

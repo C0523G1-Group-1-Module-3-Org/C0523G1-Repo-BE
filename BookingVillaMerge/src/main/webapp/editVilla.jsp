@@ -19,7 +19,7 @@
     <div></div>
     <div id="sign">
         <div id="userName"></div>
-        <a href="/main-page-controller?action=logout" id="logout" class="backgroundcolor-4 hover">Đăng xuất</a>
+        <a onclick="logout()" id="logout" class="backgroundcolor-4 hover">Đăng xuất</a>
     </div>
 </div>
 <div id="villa-list"></div>
@@ -29,10 +29,6 @@
     <div id="map-picture" class="boxshadow-inset">
         <div id="map-detail-picture"></div>
         <div id="map-change">
-
-
-
-
 
         </div>
     </div>
@@ -65,21 +61,14 @@
     <button id="delete-delete-board" class="backgroundcolor-4 hover boxshadow-inset" type="submit">Xóa</button>
     <button id="close-delete-board" class="backgroundcolor-4 hover boxshadow-inset" type="button" onclick="closeDeleteBoard()">Trở lại</button>
 </form>
-
-<label>Image Name</label>
-<input type="text" id="namebox">
-<label id="extlab"></label>
-<br>
-<br>
-<img id="myimg">
-<label id="upprogress"></label>
-<br>
-<br>
-
-<button type="button" id="selbtn">select image</button>
-<button type="button" id="upbtn">upload image</button>
-<button type="button" id="downbtn">retrieve image</button>
-
+<div id="logout-board" class="backgroundcolor-4">
+    <div id="logout-alert">
+        <p>Sau khi đăng xuất, bạn không thể sử dụng các chức năng</p>
+        <p>Tự động đăng xuất sau <span id="count-down">10</span> giây</p>
+    </div>
+    <button id="logout-now" onclick="logoutNow()">Đăng xuất</button>
+    <button onclick="cancelLogout()">Hủy</button>
+</div>
 </body>
 <script src="css_index/villaclass.js"></script>
 <script src="css_villa/villadata.js"></script>

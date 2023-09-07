@@ -400,14 +400,14 @@
 }
 #logout-board{
     position: fixed;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 1fr;
     grid-template-areas: "logout-alert logout-alert" "close logout";
     border-radius: 20px;
     top: 10%;
-    width: 25%;
-    left: 37.5%;
+    width: 26%;
+    left: 38%;
     padding-top: 0;
     padding-left: 2%;
     padding-right: 2%;

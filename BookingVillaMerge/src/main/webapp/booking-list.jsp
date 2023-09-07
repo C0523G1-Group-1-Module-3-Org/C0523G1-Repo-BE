@@ -60,21 +60,10 @@
 </nav>
 
 <div class="container-fluid">
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width: 100%">
-        <a href="/booking?action=showListPending" >
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-secondary rounded-0" for="btnradio1">Chưa duyệt</label>
-        </a>
-
-        <a href="/booking?action=showListApproved">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-secondary rounded-0" for="btnradio2">Đã duyệt</label>
-        </a>
-
-        <a href="/booking?action=showListDelete">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-secondary rounded-0" for="btnradio3">Đã hủy</label>
-        </a>
+    <div class="btn-group" style="width: 100%">
+        <a href="/booking?action=showListPending" class="btn btn-outline-secondary rounded-0">Chưa duyệt</a>
+        <a href="/booking?action=showListApproved" class="btn btn-outline-secondary rounded-0">Đã duyệt</a>
+        <a href="/booking?action=showListDelete" class="btn btn-outline-secondary rounded-0">Đã hủy</a>
     </div>
     <table>
         <thead>
