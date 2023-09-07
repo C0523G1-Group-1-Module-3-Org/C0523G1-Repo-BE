@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="stylesheet" href="css_admin/admin.css">
 <meta charset="UTF-8">
 <title>Title</title>
@@ -61,8 +62,8 @@
                     <td>Villa <c:out value="${b.villaId}"/></td>
                     <td><c:out value="${b.checkIn}"/></td>
                     <td><c:out value="${b.checkOut}"/></td>
-                    <td><c:out value="${b.price}"/></td>
-                    <td><c:out value="${b.deposit}"/></td>
+                    <fmt:formatNumber value="${b.price}" type="currency" currencySymbol="" maxFractionDigits="0" />
+                    <fmt:formatNumber value="${b.deposit}" type="currency" currencySymbol="" maxFractionDigits="0" />
                     <td><c:out value="${b.checkInPersonName}"/></td>
                     <td><c:out value="${b.checkInPersonPhoneNumber}"/></td>
                     <td><c:out value="${b.customerCode}"/></td>
